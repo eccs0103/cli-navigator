@@ -1,0 +1,53 @@
+{
+	"name": "cli-navigator",
+	"version": "0.1.0",
+	"description": "Chainable scene-navigation system for CLI apps",
+	"type": "module",
+	"main": "./dist/node/index.js",
+	"types": "./dist/node/index.d.ts",
+	"typesVersions": {
+		"*": {
+			"node": [ "dist/node/index.d.ts" ]
+		}
+	},
+	"exports": {
+		".": {
+			"types": "./dist/node/index.d.ts",
+			"import": "./dist/node/index.js",
+			"require": "./dist/node/index.js"
+		},
+		"./node": {
+			"types": "./dist/node/index.d.ts",
+			"import": "./dist/node/index.js",
+			"require": "./dist/node/index.js"
+		}
+	},
+	"scripts": {
+		"build:node": "tsc -p ./src/node/tsconfig.json",
+		"build": "npm run build:node",
+		"prepublishOnly": "npm test",
+		"test": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eccs0103/cli-navigator.git"
+	},
+	"keywords": [ "cli", "navigator", "menu", "navigation", "clack", "terminal", "tui" ],
+	"author": "eccs0103",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/eccs0103/cli-navigator/issues"
+	},
+	"homepage": "https://github.com/eccs0103/cli-navigator#readme",
+	"dependencies": {
+		"@clack/prompts": "^1.6.0"
+	},
+	"peerDependencies": {
+		"adaptive-extender": "^1.0.3"
+	},
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"adaptive-extender": "^1.0.3",
+		"typescript": "^6.0.3"
+	}
+}
