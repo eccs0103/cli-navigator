@@ -3,30 +3,19 @@
 	"version": "0.1.0",
 	"description": "Chainable scene-navigation system for CLI apps",
 	"type": "module",
-	"main": "./dist/node/index.js",
-	"types": "./dist/node/index.d.ts",
-	"typesVersions": {
-		"*": {
-			"node": [ "dist/node/index.d.ts" ]
-		}
-	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"types": "./dist/node/index.d.ts",
-			"import": "./dist/node/index.js",
-			"require": "./dist/node/index.js"
-		},
-		"./node": {
-			"types": "./dist/node/index.d.ts",
-			"import": "./dist/node/index.js",
-			"require": "./dist/node/index.js"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
 		}
 	},
 	"scripts": {
-		"build:node": "tsc -p ./src/node/tsconfig.json",
-		"build": "npm run build:node",
-		"prepublishOnly": "npm test",
-		"test": "npm run build"
+		"build": "tsc -p ./src/tsconfig.json",
+		"test": "npm run build",
+		"prepublishOnly": "npm test"
 	},
 	"repository": {
 		"type": "git",
