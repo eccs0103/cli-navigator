@@ -1,3 +1,6 @@
+## 0.1.1 (07.11.2026)
+- The package now ships one bundled `dist/index.js` beside the same type declarations; the public API is unchanged.
+
 ## 0.1.0 (02.07.2026)
 *First release.*
 - Added `Navigator` — drives a history-backed scene loop: `launch(title, menu)` starts the session, `back()` / `goto(frame)` / `terminate(success, message)` control navigation.

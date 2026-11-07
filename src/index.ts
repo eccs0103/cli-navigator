@@ -1,5 +1,7 @@
 "use strict";
 
+import "adaptive-extender/node";
+
 export * from "./models/frame.js";
 export * from "./models/history.js";
 export * from "./models/menu.js";

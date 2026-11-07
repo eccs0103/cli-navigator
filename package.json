@@ -1,6 +1,6 @@
 {
 	"name": "cli-navigator",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Chainable scene-navigation system for CLI apps",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -13,9 +13,10 @@
 		}
 	},
 	"scripts": {
-		"build": "tsc -p ./src/tsconfig.json",
+		"typecheck": "tsc -p tsconfig.core.json && tsc -p tsconfig.node.json",
+		"build": "vite build && tsc -p ./src/tsconfig.json",
 		"test": "npm run build",
-		"prepublishOnly": "npm test"
+		"prepublishOnly": "npm run typecheck && npm test"
 	},
 	"repository": {
 		"type": "git",
@@ -37,6 +38,7 @@
 	"devDependencies": {
 		"@types/node": "^26.6.6",
 		"adaptive-extender": "^1.3.0",
-		"typescript": "^7.0.2"
+		"typescript": "^7.0.2",
+		"vite": "^7.3.7"
 	}
 }
