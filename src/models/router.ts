@@ -1,5 +1,6 @@
 "use strict";
 
+import "adaptive-extender/node";
 import { type Frame } from "./frame.js";
 
 //#region Router

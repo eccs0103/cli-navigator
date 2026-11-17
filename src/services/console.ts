@@ -56,9 +56,7 @@ export class Console {
 			return;
 		}
 
-		// Workaround for Node.js #38663 (Windows): toggling raw mode off while closing
-		// the readline interface on Escape drops the next keypress. Hold raw mode on for
-		// the whole session so clack's per-prompt setRawMode(false) is a no-op.
+		// Workaround for Node.js #38663 (Windows): toggling raw mode off while closing the readline interface on Escape drops the next keypress. Hold raw mode on for the whole session so clack's per-prompt setRawMode(false) is a no-op.
 		const restore = stdin.setRawMode.bind(stdin);
 		stdin.setRawMode = mode => (mode && restore(true), stdin);
 		restore(true);
